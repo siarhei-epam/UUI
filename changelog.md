@@ -1,3 +1,22 @@
+# 5.0.0 - xx.xx.20203
+**What's New**
+* "EcmaScript" modules (ESM) are now included into UUI packages. Usage of ESM should help to eliminate unused code via tree shaking. CommonJs modules will be published along with ESM in the same package for backwards compatibility.
+
+* [useTableState]: 
+  - [BreakingChange]: removed `initialFilter` prop, if you need to provide any initial state for hook, pre-generate a link with this state on you side.
+  - added storing of sorting, columns config, and paging state into url
+  - now hook accepts optional `IEditable` props, use them for cases when you need to store DataTableState by yourself. If passed it assumed that you will handle all state changes on your side and hook will not store any state into url.
+
+* [MainMenuDropdown]: added callback renderBody with dropdownBodyProps to renderBody method of MainMenuDropdown.
+* [Dropdown]: added a 400ms delay to the submenu's close and open triggers
+  
+
+**What's Fixed**
+* [DataTable]: set 'undefined' value instead of '[]' for sorting, when sorting removed from column
+* [Dropdown]: The delay to close/open the dropdown has been fixed. In previous version the closeDelay being overwritten constantly while the mouse was moving.
+* [Button]: removed 'disabled' attribute if the Button/LinkButton/IconButton is disabled, because it will prevent all events and broke Tooltip at least.
+
+
 # 4.10.2 - 24.03.2023
 
 **What's Fixed**
@@ -47,6 +66,7 @@
 * [Anchor][Button]: added `rel='noopener noreferrer'` where `target='_blank'`
 * [PickerInput]: update correctly `dataSourceState` when programmatically handling previously loaded data, if API returns empty array
 * [ColumnsConfigurationModal]: Removed disabling of a checkbox if a column has a `fix` property and fixed the problem with pinning the column after unpinning, if it has `fix` property in the column config.
+* [NumericInput]: fixed `NumericInput` by preventing rounding up numbers if `formatOptions` are defined
 * [Rating]: fixed loveship `Rating` color for selected stars
 * [useTableState]: now correctly work with react-router baseUrl
 * [RangeDatePicker]: move focus from 'to' value to 'from' value, in case when 'from' empty

@@ -5,7 +5,7 @@
   "author": "EPAM",
   "license": "MIT",
   "main": "index.js",
-  "epam:uui:main": "build/index.js",
+  "epam:uui:main": "build/index.esm.js",
   "typings": "index.d.ts",
   "scripts": {
     "build": "node ../uui-build/scripts/buildModule",
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@epam/assets": "4.10.2",
+    "@epam/uui": "4.10.2",
     "@epam/uui-components": "4.10.2",
     "@epam/uui-core": "4.10.2",
     "@types/classnames": "2.2.6",
@@ -29,9 +30,6 @@
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
     "@types/react-test-renderer": "18.0.0",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.2",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.10.0",
     "mockdate": "^3.0.5",
     "react-test-renderer": "18.2.0"
   },

@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from "react-dom";
 import { createBrowserHistory } from "history";
 import { ErrorHandler, FlexRow, skinContext as promoSkinContext } from "@epam/promo";
-import { ApiCallOptions, ContextProvider, UuiContexts } from "@epam/uui";
+import { ApiCallOptions, ContextProvider, UuiContexts } from "@epam/uui-core";
 import { Modals, Snackbar } from "@epam/uui-components";
 import "@epam/uui-components/styles.css";
 import "@epam/promo/styles.css";
@@ -30,7 +30,7 @@ render(
         history={ history }
     >
         <ErrorHandler>
-            <FlexRow vPadding='48' padding='24' borderBottom='gray40' alignItems='top' spacing='12'>
+            <FlexRow vPadding='48' padding='24' borderBottom alignItems='top' spacing='12'>
                 <Example />
             </FlexRow>
             <Snackbar />
